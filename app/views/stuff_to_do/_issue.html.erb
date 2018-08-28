@@ -22,7 +22,7 @@
           <div class="estimate"><%= h(l_hours_short(issue.estimated_hours)) %> &nbsp;</div>
           <% end %>
   
-          <div class="progress"><%= progress_bar(issue.done_ratio, :width => '100%', :legend => due) %></div>
+          <div class="progress"><%= progress_bar(issue.done_ratio, :width => '100%') %></div>
           </div>
 
         <% end %>
