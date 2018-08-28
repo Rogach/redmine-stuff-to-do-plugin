@@ -15,16 +15,6 @@
       <% end %>
     </ol>
 
-    <div class="pane-summary">
-      <div id="doing-now-total-progress">
-        <%= progress_bar_sum(issues_for(@doing_now), :done_ratio, { :width => '200px', :legend =>  l(:stuff_to_do_text_total_progress) }) %>
-      </div>
-
-      <div id="doing-now-estimates">
-        <p><%= l(:stuff_to_do_text_total_estimates) %> <%= l_hours(total_estimates(issues_for(@doing_now))) %></p>
-      </div>
-    </div>
-
   </div>
 
   <div class="pane" id="recommended-pane">
@@ -36,16 +26,6 @@
     <ol id="recommended">
       <%= render :partial => 'item', :collection => stuff_for(@recommended) %>
     </ol>
-
-    <div class="pane-summary">
-      <div id="recommended-total-progress">
-        <%= progress_bar_sum(issues_for(@recommended), :done_ratio, { :width => '200px', :legend =>  l(:stuff_to_do_text_total_progress) }) %>
-      </div>
-
-      <div id="recommended-estimates">
-        <p><%= l(:stuff_to_do_text_total_estimates) %> <%= l_hours(total_estimates(issues_for(@recommended))) %></p>
-      </div>
-    </div>
 
     <%= link_to l(:button_clear), url_for(:controller => :stuff_to_do, :action => :clear, :user_id => @user), :confirm => l(:stuff_to_do_clear_confirm), :class => 'icon icon-del' %>
   </div>

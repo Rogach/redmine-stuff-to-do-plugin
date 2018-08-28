@@ -11,16 +11,6 @@
       <% end %>
     </ol>
 
-    <div class="pane-summary">
-      <div id="available-total-progress">
-        <%= progress_bar_sum(@available, :done_ratio, { :width => '200px', :legend =>  l(:stuff_to_do_text_total_progress) }) %>
-      </div>
-
-      <div id="available-estimates">
-        <p><%= l(:stuff_to_do_text_total_estimates) %> <%= l_hours(total_estimates(@available)) %></p>
-      </div>
-    </div>
-
   </div>
   <%= javascript_tag("var filter = #{params[:filter].nil? ? 'null' : "'" + params[:filter].to_s + "'" }") %>
   <%= javascript_tag("var project_id = #{params[:project_id].nil? ? 'null' : "'" + params[:project_id].to_s + "'" }") %>
